@@ -1,4 +1,4 @@
-package nyc.c4q.inclass_fragments;
+package nyc.c4q.inclass_fragments.Fragments;
 
 import android.app.Activity;
 import android.app.Fragment;
@@ -9,11 +9,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import nyc.c4q.inclass_fragments.MainActivity;
+
 /**
  * Created by MarckemX on 11/19/17.
  */
 
 public abstract class BaseFragment extends Fragment {
+
+    private boolean isFragmentShown = false;
 
     @LayoutRes
     protected abstract int getLayoutId();
@@ -35,4 +39,12 @@ public abstract class BaseFragment extends Fragment {
             ((MainActivity) activity).frenchToast();
         }
     }
+    public void setFragmentShown(){
+        if(isFragmentShown){
+            isFragmentShown = false;
+        } else {
+            isFragmentShown = true;
+        }
+    }
+
 }
